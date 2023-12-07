@@ -1,0 +1,121 @@
+/* Réinitialisation des marges et des paddings */
+body,
+h1,
+h2,
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Ajouter le style général à votre page */
+body {
+    font-family: Arial, sans-serif;
+}
+
+#header {
+    position: relative;
+    background-image: url('./background.jpg');
+    background-size: cover;
+    height: 400px;
+    width: 100%;
+    z-index: 1; /* Ajoutez z-index pour le contenu du header */
+}
+
+#header .image-container {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Ajoutez position:relative */
+    z-index: 2; /* Ajoutez z-index pour le contenu de l'image */
+}
+
+#header h1,
+#header h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #1b1919; /* Choisissez une couleur de texte appropriée */
+    z-index: 3; /* Ajoutez z-index pour le texte du header */
+}
+
+.menu-toggle {
+    position: fixed;
+    top: 1cm;
+    right: 2cm;
+    cursor: pointer;
+    font-size: 1.5em;
+    padding: 10px;
+    z-index: 4; /* Ajoutez z-index pour le menu toggle */
+}
+
+/* Menu déroulant à gauche */
+.nav-menu {
+    display: none;
+    position: fixed;
+    width: 100%; /* Ajoutez la largeur pour le menu déroulant */
+    top: 2cm;
+    right: 0;
+    background-color: teal;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 5; /* Ajoutez z-index pour le menu déroulant */
+}
+
+.nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Ajouter le style pour le menu, tablette et smartphone */
+/* Utilisez les médias queries pour le responsive design */
+
+/* Styler le catalogue des véhicules */
+.catalogue {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.catalogue img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    margin: 5px;
+}
+
+#agences{
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    margin: 5px;
+}
+/* Styler le footer avec l'image de l'agence */
+footer {
+   
+    height: 200px;
+    width: 200px;
+}
+
+/* Affichage du menu sur petit écran */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        right: 10px; /* Ajustez la position du menu toggle à droite sur petit écran */
+    }
+
+    .nav-menu {
+        right: -250px; /* Ajustez la position à gauche pour le menu déroulant sur petit écran */
+    }
+}
