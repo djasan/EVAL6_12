@@ -1,8 +1,7 @@
 /* Réinitialisation des marges et des paddings */
 body,
-h1,
-h2,
 p,
+header
 ul,
 li {
     margin: 0;
@@ -15,12 +14,12 @@ body {
 }
 
 #header {
-    position: relative;
     background-image: url('./background.jpg');
     background-size: cover;
-    height: 400px;
+    height: 100vh; /* Utilisez 100vh pour la hauteur de l'écran */
     width: 100%;
-    z-index: 1; /* Ajoutez z-index pour le contenu du header */
+    position: relative; /* Ajoutez une position relative */
+    z-index: 1;
 }
 
 #header .image-container {
@@ -30,58 +29,120 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative; /* Ajoutez position:relative */
-    z-index: 2; /* Ajoutez z-index pour le contenu de l'image */
+    position: relative; /* Ajoutez une position relative */
+    z-index: 2;
 }
 
 #header h1,
 #header h2 {
     position: absolute;
-    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: #1b1919; /* Choisissez une couleur de texte appropriée */
-    z-index: 3; /* Ajoutez z-index pour le texte du header */
+    color: rgb(245, 236, 236);
+    z-index: 3;
+}
+
+#header h1 {
+    top: 11%;
+    font-size: 40px;
+}
+
+#header h2 {
+    top: 17%;
+    font-size: 20px;
 }
 
 .menu-toggle {
-    position: fixed;
-    top: 1cm;
-    right: 2cm;
+    float: right;
     cursor: pointer;
-    font-size: 1.5em;
-    padding: 10px;
-    z-index: 4; /* Ajoutez z-index pour le menu toggle */
 }
 
-/* Menu déroulant à gauche */
 .nav-menu {
     display: none;
-    position: fixed;
-    width: 100%; /* Ajoutez la largeur pour le menu déroulant */
-    top: 2cm;
-    right: 0;
-    background-color: teal;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 5; /* Ajoutez z-index pour le menu déroulant */
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #f2f2f2;
+    width: 200px;
+    padding: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.nav-menu ul {
+.menu ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.nav-menu li {
+.menu li {
     padding: 10px;
     border-bottom: 1px solid #ddd;
 }
 
-/* Ajouter le style pour le menu, tablette et smartphone */
-/* Utilisez les médias queries pour le responsive design */
+nav {
+    position: absolute;
+    bottom: 50px;
+    left: 150px;
+    width: 70%;
+    background-color: rgba(149, 156, 149, 0.5);
+    padding: 10px;
+    z-index: 2;
+}
 
-/* Styler le catalogue des véhicules */
+.search-bar {
+    border: 1px solid #1a1919;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.search-bar input,
+.search-bar button {
+    padding: 8px;
+    border: 1px solid #1a1919;
+    background-color: transparent;
+    color: rgb(26, 25, 25);
+    cursor: pointer;
+}
+
+.search-bar button {
+    background-color: teal;
+    color: #000;
+}
+
+.vehicle-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.vehicle-item img {
+    max-width: 100%;
+    height: auto;
+    margin-right: 20px;
+}
+
+.vehicle-details {
+    flex: 1;
+    text-align: right;
+}
+
+.action-buttons button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.action-buttons button.btn-payer {
+    background-color: #28a745;
+}
+
 .catalogue {
     display: flex;
     justify-content: space-around;
@@ -95,27 +156,70 @@ body {
     margin: 5px;
 }
 
-#agences{
-    width: 250px;
-    height: 300px;
-    object-fit: cover;
-    margin: 5px;
+.arrow.left {
+    left: 0;
 }
-/* Styler le footer avec l'image de l'agence */
+
+.arrow.right {
+    right: 0;
+}
+
+#agences img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    margin: 150px;
+}
+
+#agences {
+    display: flex;
+    align-items: center;
+}
+
+#agences div {
+    text-align: left;
+}
+
+#agences figcaption,
+#agences p,
+#agences h4,
+#agences h5,
+#agences h6 {
+    font-family: Arial, sans-serif;
+    margin: 5px 0;
+}
+
+#agences figcaption {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#agences p {
+    font-size: 18px;
+}
+
+#agences h4,
+#agences h5,
+#agences h6 {
+    font-size: 16px;
+}
+
 footer {
-   
     height: 200px;
     width: 200px;
 }
 
-/* Affichage du menu sur petit écran */
 @media screen and (max-width: 768px) {
-    .menu-toggle {
+    #menu.menu-toggle {
+        color: white;
         display: block;
-        right: 10px; /* Ajustez la position du menu toggle à droite sur petit écran */
+        position: fixed;
+        top: 1cm;
+        right: 10px;
     }
 
     .nav-menu {
-        right: -250px; /* Ajustez la position à gauche pour le menu déroulant sur petit écran */
+        right: 0;
+        top: 3.5em;
     }
 }

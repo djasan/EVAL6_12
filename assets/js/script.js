@@ -1,7 +1,7 @@
 const headerImages = [
-    '../../assets/img/background.jpg',
-    '../../assets/img/background1.jpg',
-    '../../assets/img/background2.jpg'
+    '/assets/css/background.jpg',
+    '/assets/css/background1.jpg',
+    '/assets/css/background2.jpg'
 ];
 
 let currentImageIndex = 0;

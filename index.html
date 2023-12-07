@@ -23,42 +23,113 @@
         </ul>
     </nav>
 
+
+
     <!-- Header for "Modèles de Voitures" -->
     <header id="header">
         <div class="image-container header-image">
-            <h1>Bienvenue à bord</h1>
-            <h2>Location de voiture 24/24 et 7/7</h2>
+      
+            <img src="./assets/css/background.jpg" alt="">
+            <div class="header-text">
+                <h1>Bienvenue à bord</h1>
+                <h2>Location de voiture 24/24 et 7/7</h2>
+            </div>
         </div>
+   
     </header>
 
-    <!-- Navigation Links -->
-    <ul>
-        <li><a href="#adresse_départ">Adresse de départ</a></li>
-        <li><a href="#début_loc">Début de location</a></li>
-        <li><a href="#fin_loc">Fin de location</a></li>
-    </ul>
+    <!-- Search Bar -->
+    <nav>
+        <div class="search-bar">
+            <input type="button" value="Adresse de départ" id="btnAdresseDepart">
+            <input type="button" value="Début de location" id="btnDebutLoc">
+            <input type="button" value="Fin de location" id="btnFinLoc">
+            <button>Valider</button>
+        </div>
+    </nav>
+    <label for="résultats"> 7 résultats:</label>
+    <button id="btnPrixCroissant">
+        Prix croissant
+        <span class="arrow">&#9660;</span>
+    </button>
+
 
     <!-- Main Content -->
-    <main><div class="catalogue"></div>
-        <section id="vehicule1">
-            <h2>Véhicule 1</h2>
-            <div><img src="./assets/img/vehicule1.png" alt="Véhicule 1"></div>
-            <!-- Insérez ici la liste des modèles de berlines -->
-        </section>
-        <section id="vehicule2">
-            <h2>Véhicule 2</h2>
-            <div><img src="./assets/img/vehicule2.png" alt="Véhicule 2"></div>
-            <!-- Insérez ici la liste des modèles de SUV -->
-        </section>
-        <section id="vehicule4">
-            <h2>Véhicule 4</h2>
-            <div><img src="./assets/img/vehicule4.png" alt="Véhicule 4"></div>
-            <!-- Insérez ici la liste des autres modèles de voitures -->
-        </section>
-      
-            <h2>Agences</h2>
-            <div id="agences"></div> <img src="./assets/img/agence.jpg" alt="Agences"></div>
-     
+    <main>
+        <div class="catalogue">
+            <!-- Insérez ici le contenu du catalogue de voitures -->
+        </div>
+
+        <article id="vehicule1">
+
+
+            <figure class="vehicle-item">
+                <button class="arrow left">&#9664;</button>
+                <img src="./assets/img/vehicule1.png" alt="Véhicule 1">
+                <button class="arrow right">&#9654;</button>
+                <!-- Insérez ici la liste des modèles de berlines -->
+                <div class="vehicle-details">
+                    <figcaption>Peugeot 208</figcaption>
+
+                    <p>Diesel,5 portes,AutoRadio, forfait 1000 km (0.5/km supplémentaire)</p>
+                    <h3><br>999 € -Agence de Paris</h3>
+                    <div class="action-buttons">
+                    <button class="btn-reserver">Réserver</button>
+                    <button class="btn-payer">Payer</button>
+                </div>
+                </div>
+            </figure>
+        </article>
+
+        <article id="vehicule2">
+            <figure class="vehicle-item">
+                <button class="arrow left">&#9664;</button>
+                <img src="./assets/img/vehicule2.png" alt="Véhicule 2">
+                <button class="arrow right">&#9654;</button>
+                <div class="vehicle-details">
+                    <figcaption>Ford Focus</figcaption>
+
+                    <p>Diesel,5 portes,AutoRadio, forfait 1000 km (0.5/km supplémentaire)</p>
+                    <h3>999 €</h3>
+                    <div class="action-buttons">
+                        <button class="btn-reserver">Réserver</button>
+                        <button class="btn-payer">Payer</button>
+                    </div>
+                </div>
+            </figure>
+        </article>
+
+        <article id="vehicule4">
+
+
+            <figure class="vehicle-item">
+                <button class="arrow left">&#9664;</button>
+                <img src="./assets/img/vehicule4.png" alt="Véhicule 4">
+                <button class="arrow right">&#9654;</button>
+                <div class="vehicle-details">
+                    <figcaption>Opel Mokka</figcaption>
+                    <p>Diesel,5 portes,AutoRadio, forfait 1000 km (0.55/kilomètre supplémentaire)</p>
+                    <h3>1100 €- Agence De Paris</h3>
+                    <div class="action-buttons">
+                        <button class="btn-reserver">Réserver</button>
+                        <button class="btn-payer">Payer</button>
+                    </div>
+                </div>
+
+            </figure>
+        </article>
+
+        <article id="agences">
+            <div>
+
+                <img src="./assets/css/agence.jpg" alt="Agences">
+                <figcaption>Notre Agence de Paris</figcaption>
+                <p>300 boulevard de Vaugirard. 75015 Paris </p>
+                <h4>Ouvert 7/7 de 9h à 13h et de 14h à 20h</h4>
+                <h5>01 49 78 21 33</h5>
+                <h6>contact@vtc.com</h6>
+            </div>
+        </article>
     </main>
 
     <!-- Footer -->
@@ -68,4 +139,3 @@
 </body>
 
 </html>
-
